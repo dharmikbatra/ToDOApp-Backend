@@ -13,8 +13,7 @@ router.post("/signup",(req,res)=>{
     });
     new_user.password = new_user.generateHash(req.body.password);
     new_user.save();
-
-    res.send(new_user.name);
+    res.send(String(new_user.name));
 });
 
 router.post("/signin",(req,res)=>{
@@ -22,7 +21,7 @@ router.post("/signin",(req,res)=>{
         if(err){ console.log(err); }
         else{
             if (!docs.validPassword(req.body.password)) {
-                res.send("Password don't match")
+                res.send({message:"incorrect"});
               } else {
                 res.send(docs);
               }
