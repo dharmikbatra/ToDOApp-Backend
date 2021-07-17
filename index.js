@@ -8,7 +8,7 @@ var auth = require("./routes/auth");
 var changes = require("./routes/change");
 // const Employee = require("./models/employee.js");
 const app = express();
-// app.use(cors());
+app.use(cors());
 
 app.use(bodyParser.urlencoded({
     extended: true,
