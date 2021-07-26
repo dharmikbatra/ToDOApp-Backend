@@ -4,7 +4,7 @@ var ObjectId = require("mongoose").Types.ObjectId; //validation of id that is pa
 var {User} = require("../models/users");
 const bcrypt = require("bcrypt-nodejs");
 
-router.delete("/delete",(req,res)=>{
+router.post("/delete",(req,res)=>{
     id = ObjectId(req.body.id);
     index = req.body.index;
     todoscopy=[];
